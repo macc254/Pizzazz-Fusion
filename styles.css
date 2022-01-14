@@ -1,0 +1,43 @@
+body {
+    font-family: 'Poppins';
+}
+
+a {
+    color: whitesmoke;
+    font-size: 20px;
+    padding-right: 30px;
+}
+
+span {
+    padding: 50px;
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+.welcome {
+    background-image: url("/images/16.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 900px;
+    color: whitesmoke;
+    /* background: rgb(255, 187, 61); */
+}
+
+nav {
+    position: absolute;
+    display: flex;
+    top: 10px;
+    right: 70px;
+    letter-spacing: normal;
+    align-items: center;
+}
+
+.content h1,
+h2 {
+    font-size: 40px;
+    padding-left: 300px;
+}
+
+.content {
+    padding-top: 190px;
+}
