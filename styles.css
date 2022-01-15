@@ -87,7 +87,7 @@
         padding: 50px 350px;
     }
     
-    .menu,
+    .menu h3,
     .order h3 {
         text-align: center;
     }
@@ -95,5 +95,4 @@
     .order {
         background-color: rgb(255, 217, 0);
         height: 500px;
-        padding: 50px 350px;
     }
