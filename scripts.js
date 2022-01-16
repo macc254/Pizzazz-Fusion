@@ -7,3 +7,10 @@ $(document).ready(function() {
                         var quantity = $(".quantity").val();
                         var location = $("#location option:selected").val()
                         var price = $("input[type='checkbox']").val();
+
+                        function quantityChanged() {
+
+                            if (isNaN(quantity) || quantity <= 0) {
+                                quantity = 1
+                            }
+                        }
