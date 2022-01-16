@@ -33,7 +33,37 @@ $(document).ready(function() {
                             price = 900
                         } else if (size === 'Small') {
                             price = 850
-                        } else if (size === 'Not selected') {
+                        } else if (size === 'You') {
                             alert("Please select your size!")
                             price = 0;
                         }
+
+                        var totalCost = quantity * (price + crustPrice);
+                        var overalCost = parseInt(totalCost)
+
+                        $(".cart").append(
+                            `
+                            <tr>
+                                <td>${size}</td>
+                                <td>${topping}</td>
+                                <td>${crust}</td>
+                                <td>${location}</td>
+                                <td>${quantity}</td>
+                                <td>${overalCost}</td>
+                                <td><button class="btn remove">remove</button></td>
+                            </tr>
+                            `
+                        )
+
+                        var value;
+                        var theTotal = 0;
+
+                        $(".checkout").click(function() {
+                            $("td:nth-child(6)").each(function() {
+                                value = $(this).html();
+
+                                theTotal += parseInt(value);
+                                $(".result").text(' Thank you for shopping with us. ' + ' Your payable order is: ' + theTotal + `.`).show();
+                            });
+
+                        })
