@@ -14,3 +14,14 @@ $(document).ready(function() {
                                 quantity = 1
                             }
                         }
+
+                        quantityChanged();
+                        var crustPrice;
+                        if (topping === 'mushroom') {
+                            crustPrice = 100
+                        } else if (topping === 'beef') {
+                            crustPrice = 150
+                        } else if (topping === 'chicken') {
+
+                            crustPrice = 200;
+                        }
