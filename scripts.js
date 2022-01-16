@@ -76,3 +76,10 @@ $(document).ready(function() {
     })
 
 })
+$('input[type="checkbox"]').click(function() {
+    if ($(this).prop("checked") == true) {
+        $(".location").show()
+    } else if ($(this).prop("checked") == false) {
+        $(".location").hide()
+    }
+});
