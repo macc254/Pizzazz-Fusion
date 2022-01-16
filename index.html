@@ -27,7 +27,7 @@
         </div><br>
         <div class="content ">
             <h1>Welcome </h1><br>
-            <h1 style="color: rgb(255, 187, 61) ">We cook your desired <br>Pizza recipe</h1>
+            <h1 style="color: rgb(255, 187, 61) ">We cook your desired <br>Pizza recipe</h1><br>
             <h2>
                 <strong id=" content " style="color: rgb(255, 187, 61) ">|</strong> For the Tastiest pizzas
             </h2>
@@ -73,8 +73,8 @@
         <h3>Order Details</h3>
         <form id="orderForm">
             <div class="form-group">
-                <label for="sizePizza">What size of pizzas do you prefer?<br>
-                <select id=" sizePizza ">
+                <label for="size">What size of pizzas do you prefer?<br>
+                <select id="size">
                     <option value="small">Large</option>
                     <option value="medium">Medium</option>
                     <option value="small">Small</option>
@@ -83,8 +83,8 @@
             </label>
             </div>
             <div class="form-group">
-                <label for="typePizza">What kind of crust do you prefer?<br>
-                    <select id=" typePizza ">
+                <label for="crust">What kind of crust do you prefer?<br>
+                    <select id="crust">
                         <option value="crispy">Crispy</option>
                         <option value="stuffed">Stuffed</option>                     
                         <option value="gluttenFree">Glutten-free</option>
@@ -93,65 +93,64 @@
                 </label>
             </div>
             <div class="form-group">
-                <label for="toppingsPizza">What kind of toppings do you prefer?<br>
-                    <select id="toppingsPizza ">
+                <label for="toppings">What kind of toppings do you prefer?<br>
+                    <select id="toppings">
                         <option value="mushrooms">Mushrooms Ksh100</option>
-                        <option value="beef">Beef Ksh 120</option>                      
-                        <option value="chicken">Chicken Ksh 150</option>
+                        <option value="beef">Beef Ksh 150</option>                      
+                        <option value="chicken">Chicken Ksh 200</option>
                     </select>
                 </label>
             </div>
             <div class="form-group">
-                <label for="sizePizza">How many pizzas do you want?<br>
-                <input type="number" id="numPizzas" >
+                <label for="Quantity">How many pizzas do you want?<br>
+                <input type="number" class="quantity form-control" value="1" id="quantity" >
                 </label>
             </div>
+            <div class="form-group" id="">
+                <label class="form-check-label" for="deliver"><br>
+                <input class="form-check-input" type="checkbox" name="checkbox" id="deliver">Check for delivery: Deliver
+                </label>
+
+            </div>
+
             <div class="form-group">
-                <label for="location">Enter location for delivery<br>
-                    <input id="pac-input" id="deliveryCity" class="controls" type="text" placeholder="Search Box"/>
-                  <div id="map"></div>
+                <label for="location"> Location:<br>
+                <select class="form-select" id="location">
+                        <option value="Not selected">No Delivery</option>
+                        <option value="runda">Runda</option>
+                        <option value="lavington">Lavington</option>
+                        <option value="Westlands">Westlands</option>
+                        <option value="cbd">CBD</option>
+                        <option value="mombasard">Mombasa Rd</option>
+                 </select>
                 </label>
             </div>
+
+
+            <button class="purchase btn btn-primary gx-4">Add to cart</button>
+            <table class="table cart table-striped ">
+                <tr>
+                    <th>Size</th>
+                    <th>Crust</th>
+                    <th>Topping</th>
+                    <th>Qty</th>
+                    <th>Location</th>
+                    <th>Price</th>
+                    <th>Remove</th>
+                    <th></th>
+
+                </tr>
+            </table>
             <div class="form-group">
                 <button type="button" id="checkout" class=" btn btn-success ">Checkout</button>
+                <div class="result"></div>
+                <div class="totalDisplay"></div>
             </div>
-
-            <!-- cart trial -->
-
-            <div class="header__cart ">
-                <ul>
-                    <li class="header__submenu " id="submenu ">
-                        <button class="header__cart-btn " id="toggle-cart-btn "> 
-          <!--             <svg class="cart " width="24 " height="24 " viewBox="0 0 24 24 ">
-            <path d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75C7.17,14.7 7.18,14.66 7.2,14.63L8.1,13H15.55C16.3,13
-                    16.96,12.58 17.3,11.97L20.88,5.5C20.95,5.34 21,5.17 21,5A1,1 0 0,0 20,4H5.21L4.27,2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z "></path>
-          </svg>  -->
-                      Cart</button>
-                        <div id="shopping-cart " class="shopping-cart-container ">
-                            <table id="cart-content ">
-                                <thead>
-                                    <!--                 <tr>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th></th>
-                          </tr> -->
-                                </thead>
-                                <tbody></tbody>
-                            </table>
-                            <p class="total-container " id="total-price "></p>
-                            <a href="# " id="checkout-btn " class="cart-btn ">Checkout</a>
-                            <a href="# " id="clear-cart " class="cart-btn ">Clear Cart</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </form>
-        <div id="displayTotal"></div>
-        <div id="displayDeliveryFee"></div>
-        <div id="displayOrder"></div>
-
     </div>
+
+
+
+
     <div class="contact ">
         <h3>Contact us</h3><br>
         <div class="row ">
