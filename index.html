@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="/bootstrap-4.6.1-dist/css/bootstrap.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link rel=" stylesheet " href="/styles.css " type="text/css ">
 
 </head>
@@ -50,31 +51,27 @@
                 <img src="/images/10.png">
                 <p>Crispy Pizza</p>
                 <p>Price:</p>
-                <div class="product-price">Ksh 750</div>
-                <button type="button" class="btn btn-success">Order</button>
+                <div class="product-price">Ksh 900</div>
             </div>
 
             <div class=" col-md-4">
                 <img src="/images/10.png">
                 <p>Glutton Free</p>
                 <p>Price:</p>
-                <div class="product-price">Ksh 899</div>
-                <button type="button" class="btn btn-success">Order</button>
+                <div class="product-price">Ksh 1000</div>
             </div>
 
             <div class=" col-md-4">
                 <img src="/images/10.png">
                 <p>Stuffed Pizza</p>
                 <p>Price:</p>
-                <div class="product-price">Ksh 800</div>
-                <button type="button" class="btn btn-success">Order</button>
+                <div class="product-price">Ksh 850</div>
             </div>
         </div>
     </div>
     <div class="order">
         <h3>Order Details</h3>
-
-        <form>
+        <form id="orderForm">
             <div class="form-group">
                 <label for="sizePizza">What size of pizzas do you prefer?<br>
                 <select id=" sizePizza ">
@@ -89,7 +86,7 @@
                 <label for="typePizza">What kind of crust do you prefer?<br>
                     <select id=" typePizza ">
                         <option value="crispy">Crispy</option>
-                        <option value="stuffed">Stuffed</option>                        <option value="stuffed">Pepperoni</option>
+                        <option value="stuffed">Stuffed</option>                     
                         <option value="gluttenFree">Glutten-free</option>
 
                     </select>
@@ -98,25 +95,67 @@
             <div class="form-group">
                 <label for="toppingsPizza">What kind of toppings do you prefer?<br>
                     <select id="toppingsPizza ">
-                        <option value="mushrooms">Mushrooms</option>
-                        <option value="beef">Beef</option>                      
-                        <option value="chicken">Chicken</option>
+                        <option value="mushrooms">Mushrooms Ksh100</option>
+                        <option value="beef">Beef Ksh 120</option>                      
+                        <option value="chicken">Chicken Ksh 150</option>
                     </select>
                 </label>
             </div>
             <div class="form-group">
-                <input type="number" value="0" min="0">
+                <label for="sizePizza">How many pizzas do you want?<br>
+                <input type="number" id="numPizzas" >
+                </label>
             </div>
             <div class="form-group">
-                <button type="button" class="btn btn-success">Order</button>
-                <button type="button" class="btn btn-danger remove-product">Remove</button>
+                <label for="location">Enter location for delivery<br>
+                    <input id="pac-input" id="deliveryCity" class="controls" type="text" placeholder="Search Box"/>
+                  <div id="map"></div>
+                </label>
+            </div>
+            <div class="form-group">
+                <button type="button" id="checkout" class=" btn btn-success ">Checkout</button>
+            </div>
+
+            <!-- cart trial -->
+
+            <div class="header__cart ">
+                <ul>
+                    <li class="header__submenu " id="submenu ">
+                        <button class="header__cart-btn " id="toggle-cart-btn "> 
+          <!--             <svg class="cart " width="24 " height="24 " viewBox="0 0 24 24 ">
+            <path d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75C7.17,14.7 7.18,14.66 7.2,14.63L8.1,13H15.55C16.3,13
+                    16.96,12.58 17.3,11.97L20.88,5.5C20.95,5.34 21,5.17 21,5A1,1 0 0,0 20,4H5.21L4.27,2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z "></path>
+          </svg>  -->
+                      Cart</button>
+                        <div id="shopping-cart " class="shopping-cart-container ">
+                            <table id="cart-content ">
+                                <thead>
+                                    <!--                 <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th></th>
+                          </tr> -->
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <p class="total-container " id="total-price "></p>
+                            <a href="# " id="checkout-btn " class="cart-btn ">Checkout</a>
+                            <a href="# " id="clear-cart " class="cart-btn ">Clear Cart</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </form>
+        <div id="displayTotal"></div>
+        <div id="displayDeliveryFee"></div>
+        <div id="displayOrder"></div>
+
     </div>
-    <div class="contact">
+    <div class="contact ">
         <h3>Contact us</h3><br>
-        <div class="row">
-            <div class="col-md-4">
+        <div class="row ">
+            <div class="col-md-4 ">
                 <p>Here is the easiest way to reach us, <br>Write us a message and we will get back</p>
                 <h4>Address:</h4>
                 <p>H56 Bloomfield Ave, Ngong Road, Nairobi, <br> Kenya.</p>
@@ -130,6 +169,7 @@
     <div class="footer ">
         <p>Pizzazz Fusion © Copyright 2022. By Mercy Bore</p>
     </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initAutocomplete&libraries=places&v=weekly&channel=2" async></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js " integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin=" anonymous ">
     </script>
     <script src="/scripts.js " type="text/javascript ">
