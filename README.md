@@ -3,7 +3,7 @@ https://github.com/macc254/Pizzazz-Fusion.git
 # Author
 Mercy Bore.
 ### Description
-This is a simple website landing page for Delani Studio. You can click on what we do and read the description, hover on the portfolio images to get the project names. You can send us a message and on clicking submit a pop-up message will show.
+This is a pizza website landing page. You can choose the type of pizza you want, choose the size, choose the toppings and location for delivery. On clicking, you will see the total amount you are charged for the order.
 ### Prerequisities
 You need to have git installed
 You can install it with the following command in your terminal
