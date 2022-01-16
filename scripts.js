@@ -25,3 +25,15 @@ $(document).ready(function() {
 
                             crustPrice = 200;
                         }
+
+                        var price;
+                        if (size === 'Large') {
+                            price = 1000
+                        } else if (size === 'Medium') {
+                            price = 900
+                        } else if (size === 'Small') {
+                            price = 850
+                        } else if (size === 'Not selected') {
+                            alert("Please select your size!")
+                            price = 0;
+                        }
