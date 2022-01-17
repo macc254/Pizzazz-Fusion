@@ -41,7 +41,7 @@ span {
 }
 
 .welcome {
-    background-image: url("/images/16.jpg");
+    background-image: url("images/16.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 600px;
@@ -72,13 +72,13 @@ h2 {
 }
 
 #introduction {
-    background-image: url("/images/1.jpg");
+    background-image: url("images/1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 #introduction1 {
-    background-image: url("/images/11.png");
+    background-image: url("images/11.png");
     background-repeat: no-repeat;
     background-size: cover;
     color: whitesmoke;
