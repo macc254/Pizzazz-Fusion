@@ -27,7 +27,7 @@ This will clone the repository into your local folder.
 6. Bootstrap
 
 ##### Live Site
-View [Live]
+View [Live](https://macc254.github.io/Pizzazz-Fusion/)
 ![Website image](https://github.com/macc254/Pizzazz-Fusion/blob/master/images/Screenshot%20from%202022-01-17%2013-36-13.png)
 ![Website image](https://github.com/macc254/Pizzazz-Fusion/blob/master/images/Screenshot%20from%202022-01-17%2013-36-24.png)
 ![Website image](https://github.com/macc254/Pizzazz-Fusion/blob/master/images/Screenshot%20from%202022-01-17%2013-36-20.png)
