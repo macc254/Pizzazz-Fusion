@@ -62,19 +62,22 @@ $(document).ready(function() {
                             `
         )
 
-        var value;
-        var theTotal = 0;
 
-        $(".checkout").click(function() {
-            $("td:nth-child(6)").each(function() {
-                value = $(this).html();
-
-                theTotal += parseInt(value);
-                $(".result").text(' Thank you for shopping with us. ' + ' Your payable order is: ' + theTotal + `.`).show();
-            });
-
-        })
     })
+
+    var value;
+    var theTotal = 0;
+
+    $(".checkout").click(function() {
+        $("td:nth-child(6)").each(function() {
+            value = $(this).html();
+
+            theTotal += parseInt(value);
+            $(".result").text(' Thank you for shopping with us. ' + ' Your payable order is: ' + theTotal + `.`).show();
+        });
+
+    })
+
     var deletebtn = $(".remove");
     deletebtn.addClass('Remove')
     deletebtn.click(function(e) {
