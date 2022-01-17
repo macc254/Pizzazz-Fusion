@@ -3,7 +3,7 @@ $(document).ready(function() {
     $(".purchase").click(function() {
         var size = $("#size  option:selected").val();
         var crust = $("#crust  option:selected").val();
-        var topping = $("#topping  option:selected").val()
+        var toppings = $("#toppings  option:selected").val()
         var quantity = $(".quantity").val();
         var location = $("#location option:selected").val()
         var price = $("input[type='checkbox']").val();
@@ -17,38 +17,45 @@ $(document).ready(function() {
 
         quantityChanged();
         var crustPrice;
-        if (topping === 'mushroom') {
+        if (toppings === 'mushroom') {
             crustPrice = 100
-        } else if (topping === 'beef') {
+        } else if (toppings === 'beef') {
             crustPrice = 150
-        } else if (topping === 'chicken') {
+        } else if (toppings === 'chicken') {
 
             crustPrice = 200;
         }
-
+        var toppingPrice;
+        if (crust === 'stuffed') {
+            toppingPrice = 100
+        } else if (crust === 'crispy') {
+            toppingPrice = 120
+        } else if (crust === 'gluttenFree') {
+            toppingPrice = 150
+        }
         var price;
-        if (size === 'Large') {
+        if (size === 'large') {
             price = 1000
-        } else if (size === 'Medium') {
+        } else if (size === 'medium') {
             price = 900
-        } else if (size === 'Small') {
+        } else if (size === 'small') {
             price = 850
         } else if (size === 'You') {
             alert("Please select your size!")
             price = 0;
         }
 
-        var totalCost = quantity * (price + crustPrice);
+        var totalCost = quantity * (price + crustPrice + toppingPrice);
         var overalCost = parseInt(totalCost)
 
         $(".cart").append(
             `
                             <tr>
-                                <td>${size}</td>
-                                <td>${topping}</td>
+                                <td>${size}</td> 
                                 <td>${crust}</td>
-                                <td>${location}</td>
+                                <td>${toppings}</td>
                                 <td>${quantity}</td>
+                                <td>${location}</td>
                                 <td>${overalCost}</td>
                                 <td><button class="btn remove">remove</button></td>
                             </tr>
